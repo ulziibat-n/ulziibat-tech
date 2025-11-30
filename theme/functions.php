@@ -38,7 +38,7 @@ if ( ! defined( 'UB_TYPOGRAPHY_CLASSES' ) ) {
 	 */
 	define(
 		'UB_TYPOGRAPHY_CLASSES',
-		'prose prose-neutral max-w-none prose-a:text-primary'
+		'prose'
 	);
 }
 

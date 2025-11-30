@@ -10,51 +10,20 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-
-	<header class="entry-header">
-		<?php
-		if ( ! is_front_page() ) {
-			the_title( '<h1 class="entry-title">', '</h1>' );
-		} else {
-			the_title( '<h2 class="entry-title">', '</h2>' );
-		}
-		?>
-	</header><!-- .entry-header -->
-
-	<?php ub_post_thumbnail(); ?>
-
-	<div <?php ub_content_class( 'entry-content' ); ?>>
-		<?php
-		the_content();
-
-		wp_link_pages(
-			array(
-				'before' => '<div>' . __( 'Pages:', 'ulziibat-tech' ),
-				'after'  => '</div>',
-			)
-		);
-		?>
-	</div><!-- .entry-content -->
-
-	<?php if ( get_edit_post_link() ) : ?>
-		<footer class="entry-footer">
+	<div class="container py-20">
+		<header>
 			<?php
-			edit_post_link(
-				sprintf(
-					wp_kses(
-						/* translators: %s: Name of current post. Only visible to screen readers. */
-						__( 'Edit <span class="sr-only">%s</span>', 'ulziibat-tech' ),
-						array(
-							'span' => array(
-								'class' => array(),
-							),
-						)
-					),
-					get_the_title()
-				)
-			);
+			if ( ! is_front_page() ) {
+				the_title( '<h1 class="max-w-lg text-4xl font-black text-white sm:text-6xl">', '</h1>' );
+			} else {
+				the_title( '<h2 class="max-w-lg text-4xl font-black text-white sm:text-6xl">', '</h2>' );
+			}
 			?>
-		</footer><!-- .entry-footer -->
-	<?php endif; ?>
-
+		</header>
+		<div <?php ub_content_class( 'mt-20 max-w-2xl' ); ?>>
+			<?php
+			the_content();
+			?>
+		</div>
+	</div>
 </article><!-- #post-<?php the_ID(); ?> -->
