@@ -15,7 +15,7 @@ if ( ! defined( 'UB_VERSION' ) ) {
 	 * to create your production build, the value below will be replaced in the
 	 * generated zip file with a timestamp, converted to base 36.
 	 */
-	define( 'UB_VERSION', '0.1.0' );
+	define( 'UB_VERSION', wp_get_theme()->get( 'Version' ) );
 }
 
 if ( ! defined( 'UB_TYPOGRAPHY_CLASSES' ) ) {
