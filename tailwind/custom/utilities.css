@@ -9,3 +9,85 @@
 @utility container {
   @apply px-8 mx-auto;
 }
+
+/**
+ * By default, _tw uses Tailwind Typography's Neutral gray scale. If you are
+ * adapting an existing design and you need to set specific colors throughout,
+ * you can do so here. In your `./theme/functions.php file, you will need to
+ * replace `-neutral` with `-ulziibat-tech`.
+ */
+@utility prose {
+	--tw-prose-body: --theme(--color-gray-200, initial);
+	--tw-prose-headings: --theme(--color-white, initial);
+	--tw-prose-lead: --theme(--color-gray-100, initial);
+	--tw-prose-links: --theme(--color-lime-500, initial);
+	--tw-prose-bold: --theme(--color-gray-100, initial);
+	--tw-prose-counters: --theme(--color-gray-400, initial);
+	--tw-prose-bullets: --theme(--color-lime-500, initial);
+	--tw-prose-hr: --theme(--color-zinc-800, initial);
+	--tw-prose-quotes: --theme(--color-gray-100, initial);
+	--tw-prose-quote-borders: --theme(--color-lime-500, initial);
+	--tw-prose-captions: --theme(--color-zinc-500, initial);
+	--tw-prose-kbd: --theme(--color-zinc-400, initial);
+	--tw-prose-kbd-shadows: --theme(--color-zinc-400, initial);
+	--tw-prose-code: --theme(--color-zinc-800, initial);
+	--tw-prose-pre-code: --theme(--color-gray-100, initial);
+	--tw-prose-pre-bg: --theme(--color-zinc-800, initial);
+	--tw-prose-th-borders: --theme(--color-zinc-700, initial);
+	--tw-prose-td-borders: --theme(--color-zinc-800, initial);
+	--tw-prose-invert-body: --theme(--color-zinc-800, initial);
+	--tw-prose-invert-headings: --theme(--color-zinc-800, initial);
+	--tw-prose-invert-lead: --theme(--color-zinc-800, initial);
+	--tw-prose-invert-links: --theme(--color-lime-500, initial);
+	--tw-prose-invert-bold: --theme(--color-zinc-800, initial);
+	--tw-prose-invert-counters: --theme(--color-zinc-800, initial);
+	--tw-prose-invert-bullets: --theme(--color-zinc-800, initial);
+	--tw-prose-invert-hr: --theme(--color-zinc-800, initial);
+	--tw-prose-invert-quotes: --theme(--color-zinc-800, initial);
+	--tw-prose-invert-quote-borders: --theme(--color-lime-500, initial);
+	--tw-prose-invert-captions: --theme(--color-zinc-800, initial);
+	--tw-prose-invert-kbd: --theme(--color-zinc-800, initial);
+	--tw-prose-invert-kbd-shadows: --theme(--color-zinc-800, initial);
+	--tw-prose-invert-code: --theme(--color-zinc-800, initial);
+	--tw-prose-invert-pre-code: --theme(--color-gray-400, initial);
+	--tw-prose-invert-pre-bg: --theme(--color-zinc-800, initial);
+	--tw-prose-invert-th-borders: --theme(--color-zinc-800, initial);
+	--tw-prose-invert-td-borders: --theme(--color-zinc-800, initial);
+
+    :is(& :not(:where([class~='not-prose'],[class~='not-prose'] *))) {
+        @apply leading-snug selection:bg-lime-600 selection:text-white;
+    }
+    :is(& :not(:where([class~='not-prose'],[class~='not-prose'] *))):where(h1, h2, h3, h4, h5, h6) {
+        @apply font-bold leading-none;
+    }
+    :is(& :not(:where([class~='not-prose'],[class~='not-prose'] *))):where(strong, b) {
+        @apply font-bold;
+    }
+    :is(& :not(:where([class~='not-prose'],[class~='not-prose'] *))):where(blockquote p):before,
+    :is(& :not(:where([class~='not-prose'],[class~='not-prose'] *))):where(blockquote p):after {
+        @apply content-[''];
+    }
+    :is(& :not(:where([class~='not-prose'],[class~='not-prose'] *))):where(blockquote p) {
+        @apply text-xl not-italic font-black leading-tight;
+    }
+    :is(& :not(:where([class~='not-prose'],[class~='not-prose'] *))):where(code) {
+        @apply px-0.5 font-sans bg-zinc-50 rounded-xs selection:text-white;
+    }
+    :is(& :not(:where([class~='not-prose'],[class~='not-prose'] *))):where(pre code) {
+        @apply bg-transparent;
+    }
+    :is(& :not(:where([class~='not-prose'],[class~='not-prose'] *))):where(code)::before,
+    :is(& :not(:where([class~='not-prose'],[class~='not-prose'] *))):where(code)::after {
+        @apply content-[''];
+    }
+    :is(& :not(:where([class~='not-prose'],[class~='not-prose'] *))):where(pre) {
+        @apply p-6 font-mono text-xs bg-zinc-800;
+    }
+    :is(& :not(:where([class~='not-prose'],[class~='not-prose'] *))):where(kbd) {
+        @apply px-1 py-0 font-sans font-semibold text-white bg-lime-500 rounded-xs;
+    }
+
+    :is(& :not(:where([class~='not-prose'],[class~='not-prose'] *))):where(sup) {
+        @apply px-0.5 text-white font-bold;
+    }
+}

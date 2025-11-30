@@ -238,3 +238,22 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'TT Hoves Pro Mono';
+    src: url('fonts/TTHovesProMono-It.woff2') format('woff2'),
+        url('fonts/TTHovesProMono-It.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'TT Hoves Pro Mono';
+    src: url('fonts/TTHovesProMono-Rg.woff2') format('woff2'),
+        url('fonts/TTHovesProMono-Rg.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+

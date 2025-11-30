@@ -283,9 +283,6 @@ add_filter( 'nav_menu_link_attributes', 'ub_add_classes_to_menu_links', 10, 3 );
  * @return array Modified classes array.
  */
 function ub_body_classes( $classes ) {
-	$classes[] = 'font-sans';
-	$classes[] = 'bg-zinc-950';
-	$classes[] = 'text-gray-100';
 
 	return $classes;
 }
