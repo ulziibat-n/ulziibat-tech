@@ -204,3 +204,89 @@ function ub_html5_comment( $comment, $args, $depth ) {
 		</article><!-- .comment-body -->
 	<?php
 }
+
+/**
+ * ACF JSON Sync Configuration
+ */
+
+/**
+ * Save ACF JSON files to the /json directory.
+ *
+ * @param string $path The path to save the JSON files.
+ * @return string
+ */
+function ub_acf_json_save_point( $path ) {
+	// Update path
+	$path = get_stylesheet_directory() . '/json';
+
+	return $path;
+}
+add_filter( 'acf/settings/save_json', 'ub_acf_json_save_point' );
+
+/**
+ * Load ACF JSON files from the /json directory.
+ *
+ * @param array $paths The paths to load the JSON files from.
+ * @return array
+ */
+function ub_acf_json_load_point( $paths ) {
+	// Remove original path (optional)
+	unset( $paths[0] );
+
+	// Append path
+	$paths[] = get_stylesheet_directory() . '/json';
+
+	return $paths;
+}
+add_filter( 'acf/settings/load_json', 'ub_acf_json_load_point' );
+
+/**
+ * Add 'group' class to menu items
+ *
+ * @param array  $classes The CSS classes that are applied to the menu item's <li> element.
+ * @param object $item    The current menu item.
+ * @param object $args    An object of wp_nav_menu() arguments.
+ * @return array Modified classes array.
+ */
+function ub_add_group_class_to_menu_items( $classes, $item, $args ) {
+	if ( 'menu-1' === $args->theme_location ) {
+		$classes[] = 'group';
+	}
+	return $classes;
+}
+add_filter( 'nav_menu_css_class', 'ub_add_group_class_to_menu_items', 10, 3 );
+
+/**
+ * Add classes to menu item anchor tags
+ *
+ * @param array  $atts The HTML attributes applied to the menu item's <a> element.
+ * @param object $item The current menu item.
+ * @param object $args An object of wp_nav_menu() arguments.
+ * @return array Modified attributes array.
+ */
+function ub_add_classes_to_menu_links( $atts, $item, $args ) {
+	if ( 'menu-1' === $args->theme_location ) {
+		$atts['class'] = 'text-sm font-semibold leading-none text-zinc-200 duration-300 ease-primary hover:text-zinc-100 transition-colors focus:text-zinc-100 py-2 px-4 bg-transparent hover:bg-zinc-900 focus:bg-zinc-900 rounded-full group-[.current-menu-item]:bg-zinc-900 group-[.current-menu-item]:hover:bg-zinc-900 group-[.current-menu-item]:text-lime-500 group-[.current-menu-item]:hover:text-lime-500 focus:outline-none focus:ring-0 focus:bg-zinc-900';
+	}
+
+	if ( 'menu-2' === $args->theme_location ) {
+		$atts['class'] = 'text-xs font-semibold leading-none text-zinc-400 duration-300 ease-primary hover:text-zinc-100 transition-colors focus:text-zinc-100 group-[.current-menu-item]:bg-zinc-900 group-[.current-menu-item]:text-lime-500 group-[.current-menu-item]:hover:text-lime-500 focus:outline-none focus:ring-0';
+	}
+	return $atts;
+}
+add_filter( 'nav_menu_link_attributes', 'ub_add_classes_to_menu_links', 10, 3 );
+
+/**
+ * Add custom classes to the body tag
+ *
+ * @param array $classes Classes for the body element.
+ * @return array Modified classes array.
+ */
+function ub_body_classes( $classes ) {
+	$classes[] = 'font-sans';
+	$classes[] = 'bg-zinc-950';
+	$classes[] = 'text-gray-100';
+
+	return $classes;
+}
+add_filter( 'body_class', 'ub_body_classes' );

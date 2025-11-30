@@ -3,6 +3,7 @@
 	"private": true,
 	"type": "module",
 	"scripts": {
+		"watch:browser-sync": "browser-sync start --proxy \"https://tech.local\" --files \"theme\" --no-notify --no-inject-changes",
 		"development:tailwind:frontend": "npx postcss ./tailwind.css -o ./theme/style.css --verbose",
 		"development:tailwind:editor": "cross-env _TW_TARGET=editor npx postcss ./tailwind.css -o ./theme/style-editor.css",
 		"development:tailwind:intellisense": "cross-env _TW_TARGET=intellisense npx postcss ./tailwind.css -o ./tailwind-intellisense.css",
@@ -13,6 +14,7 @@
 		"watch:tailwind:editor": "npm run development:tailwind:editor -- --watch",
 		"watch:tailwind:intellisense": "npm run development:tailwind:intellisense -- --watch",
 		"watch:esbuild": "npm run development:esbuild -- --watch",
+		"watch-bs": "run-p watch:** browser-sync",
 		"watch": "run-p \"watch:**\"",
 		"lint:eslint": "npx eslint",
 		"lint:prettier": "npx prettier --check .",
@@ -34,6 +36,7 @@
 		"@wordpress/prettier-config": "^4.32.0",
 		"adm-zip": "^0.5.16",
 		"archiver": "^7.0.1",
+		"browser-sync": "^3.0.4",
 		"cross-env": "^10.1.0",
 		"cssnano": "^7.1.1",
 		"esbuild": "^0.25.11",
