@@ -145,7 +145,16 @@ add_action( 'widgets_init', 'ub_widgets_init' );
  */
 function ub_scripts() {
 	wp_enqueue_style( 'ulziibat-tech-style', get_stylesheet_uri(), array(), UB_VERSION );
-	wp_enqueue_script( 'ulziibat-tech-script', get_template_directory_uri() . '/js/script.min.js', array(), UB_VERSION, true );
+	wp_enqueue_script(
+		'ulziibat-tech-script',
+		get_template_directory_uri() . '/js/script.min.js',
+		array(),
+		UB_VERSION,
+		array(
+			'in_footer' => true, // Load in the footer
+			'strategy'  => 'defer', // Defer the script
+		)
+	);
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -172,7 +181,10 @@ function ub_enqueue_block_editor_script() {
 				'wp-edit-post',
 			),
 			UB_VERSION,
-			true
+			array(
+				'in_footer' => true, // Load in the footer
+				'strategy'  => 'defer', // Defer the script
+			)
 		);
 		wp_add_inline_script( 'ulziibat-tech-editor', "tailwindTypographyClasses = '" . esc_attr( UB_TYPOGRAPHY_CLASSES ) . "'.split(' ');", 'before' );
 	}

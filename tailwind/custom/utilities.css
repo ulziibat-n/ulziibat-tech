@@ -17,7 +17,7 @@
  * replace `-neutral` with `-ulziibat-tech`.
  */
 @utility prose {
-	--tw-prose-body: --theme(--color-gray-200, initial);
+	--tw-prose-body: --theme(--color-gray-300, initial);
 	--tw-prose-headings: --theme(--color-white, initial);
 	--tw-prose-lead: --theme(--color-gray-100, initial);
 	--tw-prose-links: --theme(--color-lime-500, initial);
@@ -68,7 +68,7 @@
         @apply content-[''];
     }
     :is(& :not(:where([class~='not-prose'],[class~='not-prose'] *))):where(blockquote p) {
-        @apply text-xl not-italic font-black leading-tight;
+        @apply text-2xl not-italic font-black leading-tight;
     }
     :is(& :not(:where([class~='not-prose'],[class~='not-prose'] *))):where(code) {
         @apply px-0.5 font-sans bg-zinc-50 rounded-xs selection:text-white;

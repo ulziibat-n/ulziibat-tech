@@ -41,13 +41,15 @@
 			<nav id="site-navigation" aria-label="<?php esc_attr_e( 'Main Navigation', 'ulziibat-tech' ); ?>">
 			
 				<?php
-				wp_nav_menu(
-					array(
-						'theme_location' => 'menu-1',
-						'menu_id'        => 'primary-menu',
-						'items_wrap'     => '<ul id="%1$s" class="%2$s flex gap-1" aria-label="submenu">%3$s</ul>',
-					)
-				);
+				if ( has_nav_menu( 'menu-1' ) ) {
+					wp_nav_menu(
+						array(
+							'theme_location' => 'menu-1',
+							'menu_id'        => 'primary-menu',
+							'items_wrap'     => '<ul id="%1$s" class="%2$s flex gap-1" aria-label="submenu">%3$s</ul>',
+						)
+					);
+				}
 				?>
 			</nav>
 			<a class="flex py-2 pl-4 pr-2.5 rounded-full ml-auto items-center gap-1 transition-colors ease-primary duration-300 bg-zinc-900 hover:bg-zinc-800 focus:ring-0 focus:bg-zinc-800 focus:outline-0 text-zinc-200" href="mailto:ulziibat.n@gmail.com">
