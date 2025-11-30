@@ -50,7 +50,7 @@
 				);
 				?>
 			</nav>
-			<a class="flex py-2 pl-4 pr-2.5 rounded-full ml-auto items-center gap-1 transition-colors ease-primary duration-300 bg-zinc-900 hover:bg-zinc-800 focus:ring-0 focus:bg-zinc-800 focus:outline-0 text-zinc-200" href="/contact">
+			<a class="flex py-2 pl-4 pr-2.5 rounded-full ml-auto items-center gap-1 transition-colors ease-primary duration-300 bg-zinc-900 hover:bg-zinc-800 focus:ring-0 focus:bg-zinc-800 focus:outline-0 text-zinc-200" href="mailto:ulziibat.n@gmail.com">
 				<span class="text-sm font-medium leading-none">Надтай холбогдох</span>
 				<svg class="w-6 h-auto fill-current" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="m560-240-56-58 142-142H160v-80h486L504-662l56-58 240 240-240 240Z"/></svg>
 			</a>
