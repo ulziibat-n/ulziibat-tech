@@ -12,7 +12,7 @@
 <header id="masthead">
 
 	<div class="container">
-		<div>
+		<div class="relative w-full h-screen -z-10">
 			<?php
 			if ( is_front_page() ) :
 				?>
