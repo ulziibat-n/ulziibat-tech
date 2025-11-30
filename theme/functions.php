@@ -181,7 +181,10 @@ function ub_enqueue_block_editor_script() {
 				'wp-edit-post',
 			),
 			UB_VERSION,
-			true
+			array(
+				'in_footer' => true, // Load in the footer
+				'strategy'  => 'defer', // Defer the script
+			)
 		);
 		wp_add_inline_script( 'ulziibat-tech-editor', "tailwindTypographyClasses = '" . esc_attr( UB_TYPOGRAPHY_CLASSES ) . "'.split(' ');", 'before' );
 	}
