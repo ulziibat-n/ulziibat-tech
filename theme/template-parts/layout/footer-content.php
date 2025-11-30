@@ -12,7 +12,7 @@
 <footer id="colophon">
 
 	<div class="container py-6">
-		<div class="flex items-center justify-between gap-12 pt-6 border-t border-zinc-900">
+		<div class="flex items-center justify-between gap-12 pt-6 border-t select-none border-zinc-900">
 			<div class="flex items-center gap-4">
 				<p class="text-xs font-black leading-none uppercase text-zinc-300">
 						<a class="focus:outline-1 focus:outline-offset-2 focus:outline-zinc-700 focus:rounded-xs" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">ULZIIBAT.<span class="text-lime-500">TECH</span></a> © 2025

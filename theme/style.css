@@ -28,11 +28,13 @@ Underscores and Varia are distributed under the terms of the GNU GPL v2 or later
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
 		"Liberation Mono", "Courier New", monospace;
   --color-lime-500: oklch(76.8% 0.233 130.85);
+  --color-lime-800: oklch(45.3% 0.124 130.933);
   --color-gray-100: oklch(96.7% 0.003 264.542);
   --color-zinc-100: oklch(96.7% 0.001 286.375);
   --color-zinc-200: oklch(92% 0.004 286.32);
   --color-zinc-300: oklch(87.1% 0.006 286.286);
   --color-zinc-400: oklch(70.5% 0.015 286.067);
+  --color-zinc-500: oklch(55.2% 0.016 285.938);
   --color-zinc-700: oklch(37% 0.013 285.805);
   --color-zinc-800: oklch(27.4% 0.006 286.033);
   --color-zinc-900: oklch(21% 0.006 285.885);
@@ -48,6 +50,8 @@ Underscores and Varia are distributed under the terms of the GNU GPL v2 or later
   --color-neutral-900: oklch(20.5% 0 0);
   --color-white: #fff;
   --spacing: 0.25rem;
+  --container-xs: 20rem;
+  --container-sm: 24rem;
   --container-lg: 32rem;
   --container-7xl: 80rem;
   --text-xs: 0.75rem;
@@ -56,6 +60,8 @@ Underscores and Varia are distributed under the terms of the GNU GPL v2 or later
   --text-sm--line-height: calc(1.25 / 0.875);
   --text-3xl: 1.875rem;
   --text-3xl--line-height: calc(2.25 / 1.875);
+  --text-4xl: 2.25rem;
+  --text-4xl--line-height: calc(2.5 / 2.25);
   --text-6xl: 3.75rem;
   --text-6xl--line-height: 1;
   --font-weight-medium: 500;
@@ -917,6 +923,9 @@ body {
 .w-8 {
   width: calc(var(--spacing) * 8);
 }
+.w-16 {
+  width: calc(var(--spacing) * 16);
+}
 .w-20 {
   width: calc(var(--spacing) * 20);
 }
@@ -928,6 +937,12 @@ body {
 }
 .max-w-none {
   max-width: none;
+}
+.max-w-sm {
+  max-width: var(--container-sm);
+}
+.max-w-xs {
+  max-width: var(--container-xs);
 }
 .grow {
   flex-grow: 1;
@@ -956,6 +971,9 @@ body {
 .gap-4 {
   gap: calc(var(--spacing) * 4);
 }
+.gap-6 {
+  gap: calc(var(--spacing) * 6);
+}
 .gap-8 {
   gap: calc(var(--spacing) * 8);
 }
@@ -972,11 +990,17 @@ body {
 .border-zinc-900 {
   border-color: var(--color-zinc-900);
 }
+.bg-lime-500 {
+  background-color: var(--color-lime-500);
+}
 .bg-transparent {
   background-color: transparent;
 }
 .bg-white {
   background-color: var(--color-white);
+}
+.bg-zinc-100 {
+  background-color: var(--color-zinc-100);
 }
 .bg-zinc-900 {
   background-color: var(--color-zinc-900);
@@ -987,8 +1011,20 @@ body {
 .fill-current {
   fill: currentcolor;
 }
+.fill-lime-500 {
+  fill: var(--color-lime-500);
+}
+.fill-lime-800 {
+  fill: var(--color-lime-800);
+}
 .fill-white {
   fill: var(--color-white);
+}
+.fill-zinc-500 {
+  fill: var(--color-zinc-500);
+}
+.fill-zinc-800 {
+  fill: var(--color-zinc-800);
 }
 .px-4 {
   padding-inline: calc(var(--spacing) * 4);
@@ -1001,6 +1037,9 @@ body {
 }
 .py-6 {
   padding-block: calc(var(--spacing) * 6);
+}
+.py-10 {
+  padding-block: calc(var(--spacing) * 10);
 }
 .py-20 {
   padding-block: calc(var(--spacing) * 20);
@@ -1016,6 +1055,10 @@ body {
 }
 .font-sans {
   font-family: var(--font-sans);
+}
+.text-4xl {
+  font-size: var(--text-4xl);
+  line-height: var(--tw-leading, var(--text-4xl--line-height));
 }
 .text-6xl {
   font-size: var(--text-6xl);
@@ -1073,6 +1116,9 @@ body {
 }
 .text-zinc-700 {
   color: var(--color-zinc-700);
+}
+.text-zinc-800 {
+  color: var(--color-zinc-800);
 }
 .uppercase {
   text-transform: uppercase;
@@ -1135,15 +1181,30 @@ body {
   --tw-prose-invert-th-borders: var(--color-neutral-600);
   --tw-prose-invert-td-borders: var(--color-neutral-700);
 }
+.select-none {
+  -webkit-user-select: none;
+  user-select: none;
+}
 .group-\[\.current-menu-item\]\:bg-zinc-900:is(:where(.group):is(.current-menu-item) *) {
   background-color: var(--color-zinc-900);
 }
 .group-\[\.current-menu-item\]\:text-lime-500:is(:where(.group):is(.current-menu-item) *) {
   color: var(--color-lime-500);
 }
+.selection\:bg-lime-500 *::selection {
+  background-color: var(--color-lime-500);
+}
+.selection\:bg-lime-500::selection {
+  background-color: var(--color-lime-500);
+}
 @media (hover: hover) {
   .hover\:bg-lime-500:hover {
     background-color: var(--color-lime-500);
+  }
+}
+@media (hover: hover) {
+  .hover\:bg-lime-800:hover {
+    background-color: var(--color-lime-800);
   }
 }
 @media (hover: hover) {
@@ -1154,6 +1215,11 @@ body {
 @media (hover: hover) {
   .hover\:bg-zinc-900:hover {
     background-color: var(--color-zinc-900);
+  }
+}
+@media (hover: hover) {
+  .hover\:bg-zinc-950:hover {
+    background-color: var(--color-zinc-950);
   }
 }
 @media (hover: hover) {
@@ -1185,6 +1251,9 @@ body {
 .focus\:bg-zinc-900:focus {
   background-color: var(--color-zinc-900);
 }
+.focus\:text-white:focus {
+  color: var(--color-white);
+}
 .focus\:text-zinc-100:focus {
   color: var(--color-zinc-100);
 }
@@ -1212,6 +1281,22 @@ body {
 .focus\:outline-none:focus {
   --tw-outline-style: none;
   outline-style: none;
+}
+@media (width >= 40rem) {
+  .sm\:gap-12 {
+    gap: calc(var(--spacing) * 12);
+  }
+}
+@media (width >= 40rem) {
+  .sm\:py-20 {
+    padding-block: calc(var(--spacing) * 20);
+  }
+}
+@media (width >= 40rem) {
+  .sm\:text-6xl {
+    font-size: var(--text-6xl);
+    line-height: var(--tw-leading, var(--text-6xl--line-height));
+  }
 }
 @property --tw-font-weight {
   syntax: "*";

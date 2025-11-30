@@ -24,7 +24,7 @@
 		?>
 	</div>
 	<div class="container py-6">
-		<div class="flex items-center gap-12">
+		<div class="flex items-center gap-12 select-none">
 			<div class="flex gap-8">
 				<a class="flex items-center gap-2 focus:outline-0" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
 					<svg class="w-8 h-auto fill-white" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="m443-340 74-101 73 101 148-202-85-63-63 86-74-102-73 102-74-101-147 202 85 63 62-86 74 101Zm37 294q-91 0-169.99-34.08-78.98-34.09-137.41-92.52-58.43-58.43-92.52-137.41Q46-389 46-480q0-91 34.08-169.99 34.09-78.98 92.52-137.41 58.43-58.43 137.41-92.52Q389-914 480-914q91 0 169.99 34.08 78.98 34.09 137.41 92.52 58.43 58.43 92.52 137.41Q914-571 914-480q0 91-34.08 169.99-34.09 78.98-92.52 137.41-58.43 58.43-137.41 92.52Q571-46 480-46Z"/></svg>
